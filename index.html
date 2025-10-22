@@ -1,68 +1,74 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="dark"> <head>
+<html lang="es" data-theme="dark">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Mr. Brad - Desarrollador Web</title>
-    <meta name="description" content="Portfolio de Mr. Brad. Desarrollador web especializado en soluciones modernas.">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico"> <meta property="og:title" content="Mr. Brad - Portfolio">
-    <meta property="og:description" content="Portfolio de Mr. Brad. Desarrollador web especializado...">
-    <meta property="og:image" content="https://mrbrad.me/profile.jpg"> <meta property="og:url" content="https://mrbrad.me">
+    <title>Mr. Brad - Desarrollador</title>
+    <meta name="description" content="Portfolio de Mr. Brad. Desarrollador web estilo retro.">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    
     <style>
-        /* --- Reseteo y Variables (Estilo Moderno/Oscuro) --- */
+        /* --- Variables de Color (Estilo Pixel/Retro) --- */
         :root[data-theme="light"] {
-            --color-bg: #f9f9f9;
+            --color-bg: #f0f0f0;
             --color-bg-secondary: #ffffff;
             --color-text-primary: #1a1a1a;
-            --color-text-secondary: #555555;
-            --color-border: #eaeaea;
-            --color-link: #0070f3;
-            --color-link-hover: #0056b3;
-            --color-shadow: rgba(0, 0, 0, 0.05);
+            --color-text-secondary: #444444;
+            --color-border: #1a1a1a; /* Bordes duros */
+            --color-link: #0000ff; /* Azul brillante */
+            --color-link-hover: #ff00ff; /* Magenta */
         }
         
         :root[data-theme="dark"] {
-            --color-bg: #111111;
-            --color-bg-secondary: #1c1c1c;
-            --color-text-primary: #f0f0f0;
+            --color-bg: #0a0a0a;
+            --color-bg-secondary: #161616;
+            --color-text-primary: #e0e0e0;
             --color-text-secondary: #999999;
-            --color-border: #333333;
-            --color-link: #00aaff;
-            --color-link-hover: #33bbff;
-            --color-shadow: rgba(0, 0, 0, 0.2);
+            --color-border: #e0e0e0; /* Bordes duros */
+            --color-link: #00ff00; /* Verde brillante */
+            --color-link-hover: #ffff00; /* Amarillo */
         }
 
-        /* --- Estilos Globales --- */
+        /* --- Estilos Globales (¡CON FUENTE PIXELADA!) --- */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            /* 2. APLICAR LA FUENTE PIXELADA A TODO */
+            font-family: 'Pixelify Sans', monospace;
             background-color: var(--color-bg);
             color: var(--color-text-primary);
-            line-height: 1.7;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.2s, color 0.2s;
+            
+            /* Opcional: Patrón de fondo sutil (como puntos) */
+            background-image: radial-gradient(var(--color-text-secondary) 1px, transparent 0);
+            background-size: 15px 15px;
+            background-position: -5px -5px;
+        }
+
+        /* Evitar que la fuente se suavice (se vea borrosa) */
+        h1, h2, h3, p, a, span, div, button {
+            image-rendering: pixelated;
+            font-smooth: never;
+            -webkit-font-smoothing: none;
         }
 
         .container {
-            max-width: 960px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 20px;
         }
 
         a {
             color: var(--color-link);
-            text-decoration: none;
-            transition: color 0.2s ease;
+            text-decoration: underline; /* El pixel art suele usar subrayado */
         }
         a:hover {
             color: var(--color-link-hover);
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
+            text-decoration: none;
         }
         
         h1, h2, h3 {
@@ -71,9 +77,9 @@
             color: var(--color-text-primary);
         }
         
-        h1 { font-size: 2.8em; }
-        h2 { font-size: 2em; margin-top: 48px; border-bottom: 1px solid var(--color-border); padding-bottom: 16px; }
-        h3 { font-size: 1.4em; }
+        h1 { font-size: 3em; }
+        h2 { font-size: 2.2em; margin-top: 40px; }
+        h3 { font-size: 1.5em; }
         
         p {
             margin: 0 0 16px 0;
@@ -83,48 +89,50 @@
 
         /* --- Cabecera (Nav) --- */
         .header-nav {
-            padding: 24px 0;
+            padding: 20px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 2px solid var(--color-border); /* Borde duro */
+            margin-bottom: 40px;
         }
         
         .header-nav .logo {
-            font-size: 1.3em;
+            font-size: 1.5em;
             font-weight: 700;
             color: var(--color-text-primary);
             text-decoration: none;
         }
         
-        /* Botón Modo Oscuro */
+        /* Botón Modo Oscuro (Estilo Pixel) */
         #theme-toggle {
-            background: none;
-            border: 1px solid var(--color-border);
-            border-radius: 6px;
+            background-color: var(--color-bg);
+            border: 2px solid var(--color-border);
+            border-radius: 0; /* 3. SIN BORDES REDONDEADOS */
             cursor: pointer;
-            padding: 5px 8px;
-            color: var(--color-text-secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 8px 10px;
+            color: var(--color-text-primary);
+            font-family: 'Pixelify Sans', monospace;
+            font-size: 1em;
         }
         #theme-toggle:hover {
-            background-color: var(--color-bg-secondary);
+            background-color: var(--color-text-primary);
+            color: var(--color-bg);
         }
 
         /* --- Sección Hero (Intro) --- */
         .hero {
             text-align: center;
-            padding: 80px 0;
+            padding: 60px 0;
         }
         
         .hero h1 {
-            font-size: 3.5em; /* Más grande */
-            margin-bottom: 24px;
+            font-size: 4em;
+            margin-bottom: 20px;
         }
         
         .hero .subtitle {
-            font-size: 1.4em;
+            font-size: 1.3em;
             color: var(--color-text-secondary);
             max-width: 600px;
             margin: 0 auto 32px auto;
@@ -142,148 +150,91 @@
         .social-links li a {
             color: var(--color-text-secondary);
             text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9em;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            font-weight: 700;
+            font-size: 1em;
         }
         .social-links li a:hover {
-            color: var(--color-text-primary);
-        }
-        .social-links svg {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
+            color: var(--color-link-hover);
+            text-decoration: underline;
         }
 
         /* --- Cuadrícula de Proyectos (Grid) --- */
         .project-grid {
             display: grid;
-            /* Esta línea crea la cuadrícula responsive: */
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
+            gap: 20px;
         }
 
         .project-card {
             background-color: var(--color-bg-secondary);
-            border: 1px solid var(--color-border);
-            border-radius: 12px;
-            overflow: hidden; /* Para que la imagen se ajuste a los bordes redondeados */
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 4px 12px var(--color-shadow);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px var(--color-shadow);
+            border: 2px solid var(--color-border); /* Borde duro */
+            border-radius: 0; /* 3. SIN BORDES REDONDEADOS */
+            overflow: hidden;
+            box-shadow: none; /* 4. SIN SOMBRAS */
         }
         
         .project-card img {
             width: 100%;
-            aspect-ratio: 16 / 9; /* Mantiene la proporción 16:9 */
-            object-fit: cover; /* Evita que la imagen se deforme */
-            border-bottom: 1px solid var(--color-border);
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-bottom: 2px solid var(--color-border);
+            border-radius: 0;
         }
         
         .project-card-content {
-            padding: 24px;
+            padding: 20px;
         }
         
         .project-card h3 a {
-            font-weight: 600;
+            font-weight: 700;
             color: var(--color-text-primary);
+            text-decoration: none;
         }
         .project-card h3 a:hover {
             color: var(--color-link);
-            text-decoration: none;
+            text-decoration: underline;
         }
         
         .project-card .description {
-            font-size: 0.95em;
+            font-size: 1em;
             color: var(--color-text-secondary);
             margin-bottom: 16px;
-        }
-
-        .project-card .links {
-            margin-top: 16px;
-            display: flex;
-            gap: 16px;
-        }
-
-        .project-card .links a {
-            font-weight: 600;
-            font-size: 0.9em;
-        }
-        
-        .project-card .tags {
-            margin-top: 16px;
         }
         
         .project-card .tag {
             display: inline-block;
             background-color: var(--color-bg);
             color: var(--color-text-secondary);
-            padding: 4px 10px;
-            border-radius: 16px;
+            padding: 4px 8px;
             margin: 4px 4px 4px 0;
-            font-size: 0.8em;
-            font-weight: 500;
+            font-size: 0.9em;
+            font-weight: 700;
             border: 1px solid var(--color-border);
-        }
-
-        /* --- Sección de Habilidades --- */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 16px;
-        }
-        
-        .skill-item {
-            background-color: var(--color-bg-secondary);
-            color: var(--color-text-primary);
-            border: 1px solid var(--color-border);
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-weight: 500;
-            transition: transform 0.2s ease;
-        }
-        .skill-item:hover {
-            transform: translateY(-3px);
         }
 
         /* --- Footer --- */
         .footer {
             text-align: center;
-            padding: 48px 0;
-            margin-top: 48px;
-            border-top: 1px solid var(--color-border);
-            font-size: 0.9em;
+            padding: 40px 0;
+            margin-top: 40px;
+            border-top: 2px solid var(--color-border);
+            font-size: 1em;
             color: var(--color-text-secondary);
         }
         
-        /* --- Responsividad --- */
         @media (max-width: 768px) {
-            h1, .hero h1 {
-                font-size: 2.2em;
-            }
-            .hero .subtitle {
-                font-size: 1.1em;
-            }
-            h2 {
-                font-size: 1.8em;
-            }
+            h1, .hero h1 { font-size: 2.5em; }
+            h2 { font-size: 1.8em; }
         }
-
     </style>
 </head>
-<body data-theme="dark"> <header class="header-nav container">
+<body data-theme="dark">
+
+    <header class="header-nav container">
         <a href="#" class="logo">mrbrad.me</a>
         
         <button id="theme-toggle" title="Cambiar tema">
-            <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="display:none;"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
-            <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm-5-6.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm11 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-9.354 5.354a.5.5 0 0 1 0-.707l1.414-1.414a.5.5 0 1 1 .707.707l-1.414 1.414a.5.5 0 0 1-.707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.343 4.343a.5.5 0 0 1 .707 0l1.414 1.414a.5.5 0 0 1 0 .707L5.05 6.464a.5.5 0 0 1-.707-.707zm9.193 2.121a.5.5 0 0 1 0-.707l-1.414-1.414a.5.5 0 1 1 .707.707l1.414 1.414a.5.5 0 0 1-.707 0z"/></svg>
+            Modo
         </button>
     </header>
 
@@ -292,28 +243,13 @@
         <section class="hero">
             <h1>Hola, soy Mr. Brad 👋</h1>
             <p class="subtitle">
-                Desarrollador Full-Stack (o lo que seas). Convierto ideas en soluciones web modernas, rápidas y seguras.
+                Desarrollador Full-Stack. Convierto ideas en soluciones web.
             </p>
             
             <ul class="social-links">
-                <li>
-                    <a href="https://github.com/mrbrad" target="_blank" rel="noopener noreferrer">
-                        <svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-                        GitHub
-                    </a>
-                </li>
-                <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                        <svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5V8h3v11zM6.5 6.5A1.5 1.5 0 118 5a1.5 1.5 0 01-1.5 1.5zM19 19h-3v-5.5c0-1.3-.47-2.17-1.5-2.17-.83 0-1.3.56-1.5 1.11-.07.2-.09.48-.09.76V19h-3V8h3v1.32c.4-.64 1.1-1.32 2.68-1.32C17.36 8 19 9.36 19 12.5v6.5z"></path></svg>
-                        LinkedIn
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:hola@mrbrad.me">
-                        <svg viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-10 7L2 8V6l10 7 10-7v2z"></path></svg>
-                        Contacto
-                    </a>
-                </li>
+                <li><a href="https://github.com/mrbrad" target="_blank" rel="noopener noreferrer">[ GitHub ]</a></li>
+                <li><a href="#" target="_blank" rel="noopener noreferrer">[ LinkedIn ]</a></li>
+                <li><a href="mailto:hola@mrbrad.me">[ Contacto ]</a></li>
             </ul>
         </section>
 
@@ -323,11 +259,9 @@
             <div class="project-grid">
                 
                 <article class="project-card">
-                    <img src="https://via.placeholder.com/600x338/1c1c1c/999999?text=Imagen+Proyecto+1" alt="Preview del Proyecto 1">
+                    <img src="https://via.placeholder.com/600x338/161616/00ff00?text=Proyecto+1+Img" alt="Preview del Proyecto 1">
                     <div class="project-card-content">
-                        <h3>
-                            <a href="#" target="_blank" rel="noopener noreferrer">Nombre del Proyecto 1</a>
-                        </h3>
+                        <h3><a href="#" target="_blank" rel="noopener noreferrer">Nombre del Proyecto 1</a></h3>
                         <p class="description">
                             Una breve descripción de lo que hace este proyecto, la tecnología utilizada y cuál fue mi rol.
                         </p>
@@ -336,108 +270,52 @@
                             <span class="tag">Node.js</span>
                             <span class="tag">Firebase</span>
                         </div>
-                        <div class="links">
-                            <a href="#" target="_blank" rel="noopener noreferrer">Ver Demo</a>
-                            <a href="#" target="_blank" rel="noopener noreferrer">Ver Código</a>
-                        </div>
                     </div>
                 </article>
 
                 <article class="project-card">
-                    <img src="https://via.placeholder.com/600x338/1c1c1c/999999?text=Imagen+Proyecto+2" alt="Preview del Proyecto 2">
+                    <img src="https://via.placeholder.com/600x338/161616/00ff00?text=Proyecto+2+Img" alt="Preview del Proyecto 2">
                     <div class="project-card-content">
                         <h3><a href="#" target="_blank" rel="noopener noreferrer">Proyecto "Alpha"</a></h3>
                         <p class="description">
-                            Plataforma de análisis de datos en tiempo real construida con Python (Django) y D3.js.
+                            Plataforma de análisis de datos en tiempo real construida con Python (Django).
                         </p>
                         <div class="tags">
                             <span class="tag">Python</span>
                             <span class="tag">Django</span>
-                            <span class="tag">D3.js</span>
-                        </div>
-                         <div class="links">
-                            <a href="#" target="_blank" rel="noopener noreferrer">Ver Demo</a>
-                            <a href="#" target="_blank" rel="noopener noreferrer">Ver Código</a>
+                            <span class="tag">SQL</span>
                         </div>
                     </div>
                 </article>
-                
-                <article class="project-card">
-                    <img src="https://via.placeholder.com/600x338/1c1c1c/999999?text=Imagen+Proyecto+3" alt="Preview del Proyecto 3">
-                    <div class="project-card-content">
-                        <h3><a href="#" target="_blank" rel="noopener noreferrer">Mi Blog Técnico</a></h3>
-                        <p class="description">
-                            Blog personal construido con Astro y MDX. Enfocado en velocidad y SEO.
-                        </p>
-                        <div class="tags">
-                            <span class="tag">Astro</span>
-                            <span class="tag">MDX</span>
-                            <span class="tag">Tailwind</span>
-                        </div>
-                         <div class="links">
-                            <a href="#" target="_blank" rel="noopener noreferrer">Ver Blog</a>
-                            <a href="#" target="_blank" rel="noopener noreferrer">Ver Código</a>
-                        </div>
-                    </div>
-                </article>
-                
-            </div>
-        </section>
 
-        <section class="skills">
-            <h2>Mis Habilidades</h2>
-            <div class="skills-grid">
-                <span class="skill-item">JavaScript (ES6+)</span>
-                <span class="skill-item">TypeScript</span>
-                <span class="skill-item">React</span>
-                <span class="skill-item">Node.js</span>
-                <span class="skill-item">Next.js</span>
-                <span class="skill-item">Python</span>
-                <span class="skill-item">Django</span>
-                <span class="skill-item">SQL (PostgreSQL)</span>
-                <span class="skill-item">MongoDB</span>
-                <span class="skill-item">Docker</span>
-                <span class="skill-item">Git & GitHub</span>
-                <span class="skill-item">HTML5</span>
-                <span class="skill-item">CSS3 & SASS</span>
             </div>
         </section>
         
     </main>
     
     <footer class="footer">
-        © 2025 mrbrad.me · Creado con inspiración y código.
+        © 2025 mrbrad.me
     </footer>
 
     <script>
         const btn = document.getElementById("theme-toggle");
-        const iconMoon = document.getElementById("icon-moon");
-        const iconSun = document.getElementById("icon-sun");
         const html = document.documentElement;
 
         function setTheme(theme) {
-            if (theme === "dark") {
-                html.setAttribute("data-theme", "dark");
-                iconMoon.style.display = "none";
-                iconSun.style.display = "block";
-            } else {
-                html.setAttribute("data-theme", "light");
-                iconMoon.style.display = "block";
-                iconSun.style.display = "none";
-            }
+            html.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
         }
 
         function toggleTheme() {
             const currentTheme = html.getAttribute("data-theme");
             const newTheme = currentTheme === "dark" ? "light" : "dark";
             setTheme(newTheme);
-            localStorage.setItem("theme", newTheme);
         }
 
         (function initTheme() {
             const savedTheme = localStorage.getItem("theme");
             const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-            const theme = savedTheme || preferredTheme; // Da prioridad al guardado, si no, al del sistema
+            const theme = savedTheme || preferredTheme;
             setTheme(theme);
         })();
 
