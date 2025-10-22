@@ -1,47 +1,53 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
-<head>
+<html lang="es" data-theme="dark"> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mrbrad.me - Portfolio</title>
-    <meta name="description" content="Portfolio profesional de Mr. Brad.">
     
+    <title>Mr. Brad - Desarrollador Web</title>
+    <meta name="description" content="Portfolio de Mr. Brad. Desarrollador web especializado en soluciones modernas.">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"> <meta property="og:title" content="Mr. Brad - Portfolio">
+    <meta property="og:description" content="Portfolio de Mr. Brad. Desarrollador web especializado...">
+    <meta property="og:image" content="https://mrbrad.me/profile.jpg"> <meta property="og:url" content="https://mrbrad.me">
+
     <style>
-        /* --- Reseteo y Variables (Inspirado en GitHub) --- */
+        /* --- Reseteo y Variables (Estilo Moderno/Oscuro) --- */
         :root[data-theme="light"] {
-            --color-bg: #f6f8fa;             /* Fondo gris claro */
-            --color-bg-secondary: #ffffff;   /* Fondo de "cajas" */
-            --color-text-primary: #24292e;   /* Texto principal (casi negro) */
-            --color-text-secondary: #586069; /* Texto secundario (gris) */
-            --color-border: #e1e4e8;         /* Borde de "cajas" */
-            --color-link: #0366d6;           /* Enlaces azules */
-            --color-link-hover: #005cc5;
-            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-            --border-radius: 6px;
+            --color-bg: #f9f9f9;
+            --color-bg-secondary: #ffffff;
+            --color-text-primary: #1a1a1a;
+            --color-text-secondary: #555555;
+            --color-border: #eaeaea;
+            --color-link: #0070f3;
+            --color-link-hover: #0056b3;
+            --color-shadow: rgba(0, 0, 0, 0.05);
         }
         
-        /* Opcional: Modo Oscuro (si quieres añadir un botón para cambiarlo) */
         :root[data-theme="dark"] {
-            --color-bg: #0d1117;
-            --color-bg-secondary: #161b22;
-            --color-text-primary: #c9d1d9;
-            --color-text-secondary: #8b949e;
-            --color-border: #30363d;
-            --color-link: #58a6ff;
-            --color-link-hover: #79c0ff;
+            --color-bg: #111111;
+            --color-bg-secondary: #1c1c1c;
+            --color-text-primary: #f0f0f0;
+            --color-text-secondary: #999999;
+            --color-border: #333333;
+            --color-link: #00aaff;
+            --color-link-hover: #33bbff;
+            --color-shadow: rgba(0, 0, 0, 0.2);
         }
 
         /* --- Estilos Globales --- */
         body {
-            font-family: var(--font-family);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             background-color: var(--color-bg);
             color: var(--color-text-primary);
-            line-height: 1.6;
+            line-height: 1.7;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
 
         a {
@@ -49,277 +55,397 @@
             text-decoration: none;
             transition: color 0.2s ease;
         }
-
         a:hover {
             color: var(--color-link-hover);
-            text-decoration: underline;
         }
 
         img {
             max-width: 100%;
             height: auto;
+            display: block;
         }
         
-        /* --- Cabecera (Nav) --- */
-        .header-nav {
-            background-color: var(--color-bg-secondary);
-            border-bottom: 1px solid var(--color-border);
-            padding: 16px 32px;
-            font-weight: 600;
-        }
-        
-        .header-nav .logo {
-            font-size: 1.2em;
+        h1, h2, h3 {
+            margin: 0 0 16px 0;
+            font-weight: 700;
             color: var(--color-text-primary);
-            text-decoration: none;
-        }
-        .header-nav .logo:hover {
-            text-decoration: none;
-        }
-
-        /* --- Contenedor Principal --- */
-        .container {
-            max-width: 1012px;
-            margin: 32px auto;
-            padding: 0 32px;
-            display: flex;
-            gap: 24px;
-            flex: 1;
-        }
-
-        /* --- Sidebar (Perfil) --- */
-        .sidebar {
-            width: 25%; /* Ancho similar al de GitHub */
-            flex-shrink: 0;
         }
         
-        .profile-pic {
-            width: 100%;
-            border: 1px solid var(--color-border);
-            border-radius: 50%; /* Foto de perfil redonda */
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-
-        .profile-name {
-            font-size: 1.5em;
-            font-weight: 600;
-            margin: 16px 0 4px 0;
-        }
+        h1 { font-size: 2.8em; }
+        h2 { font-size: 2em; margin-top: 48px; border-bottom: 1px solid var(--color-border); padding-bottom: 16px; }
+        h3 { font-size: 1.4em; }
         
-        .profile-username {
+        p {
+            margin: 0 0 16px 0;
             font-size: 1.1em;
             color: var(--color-text-secondary);
-            font-weight: 300;
-            margin: 0 0 16px 0;
         }
-        
-        .profile-bio {
-            font-size: 0.95em;
-            margin-bottom: 16px;
-        }
-        
-        .profile-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            font-size: 0.9em;
-        }
-        
-        .profile-links li {
-            margin-bottom: 8px;
-            color: var(--color-text-secondary);
+
+        /* --- Cabecera (Nav) --- */
+        .header-nav {
+            padding: 24px 0;
             display: flex;
+            justify-content: space-between;
             align-items: center;
         }
         
-        .profile-links svg { /* Iconos */
-            margin-right: 8px;
-            fill: currentColor;
-            width: 16px;
-            height: 16px;
-        }
-
-        /* --- Contenido Principal (Proyectos) --- */
-        .main-content {
-            width: 75%;
+        .header-nav .logo {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            text-decoration: none;
         }
         
-        .main-content h2 {
-            font-size: 1.25em;
-            border-bottom: 1px solid var(--color-border);
-            padding-bottom: 8px;
-            margin-top: 0;
-            font-weight: 600;
+        /* Botón Modo Oscuro */
+        #theme-toggle {
+            background: none;
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            cursor: pointer;
+            padding: 5px 8px;
+            color: var(--color-text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #theme-toggle:hover {
+            background-color: var(--color-bg-secondary);
         }
 
-        .project-list {
+        /* --- Sección Hero (Intro) --- */
+        .hero {
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .hero h1 {
+            font-size: 3.5em; /* Más grande */
+            margin-bottom: 24px;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.4em;
+            color: var(--color-text-secondary);
+            max-width: 600px;
+            margin: 0 auto 32px auto;
+        }
+
+        .social-links {
             list-style: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+        }
+        
+        .social-links li a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .social-links li a:hover {
+            color: var(--color-text-primary);
+        }
+        .social-links svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
         }
 
-        /* Estilo "Repo" de GitHub */
+        /* --- Cuadrícula de Proyectos (Grid) --- */
+        .project-grid {
+            display: grid;
+            /* Esta línea crea la cuadrícula responsive: */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
         .project-card {
             background-color: var(--color-bg-secondary);
             border: 1px solid var(--color-border);
-            border-radius: var(--border-radius);
-            padding: 24px;
-            margin-bottom: 16px;
-            transition: border-color 0.2s ease;
-        }
-
-        .project-card:hover {
-            border-color: #d1d5da; /* Un poco más oscuro al pasar el ratón */
+            border-radius: 12px;
+            overflow: hidden; /* Para que la imagen se ajuste a los bordes redondeados */
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 12px var(--color-shadow);
         }
         
-        .project-card h3 {
-            margin: 0 0 8px 0;
-            font-size: 1.2em;
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px var(--color-shadow);
+        }
+        
+        .project-card img {
+            width: 100%;
+            aspect-ratio: 16 / 9; /* Mantiene la proporción 16:9 */
+            object-fit: cover; /* Evita que la imagen se deforme */
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .project-card-content {
+            padding: 24px;
         }
         
         .project-card h3 a {
             font-weight: 600;
+            color: var(--color-text-primary);
+        }
+        .project-card h3 a:hover {
+            color: var(--color-link);
+            text-decoration: none;
         }
         
         .project-card .description {
-            font-size: 0.9em;
+            font-size: 0.95em;
             color: var(--color-text-secondary);
             margin-bottom: 16px;
         }
-        
-        .project-card .tags {
-            font-size: 0.75em;
-            color: var(--color-link);
+
+        .project-card .links {
+            margin-top: 16px;
+            display: flex;
+            gap: 16px;
         }
 
+        .project-card .links a {
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        .project-card .tags {
+            margin-top: 16px;
+        }
+        
         .project-card .tag {
             display: inline-block;
-            background-color: #f1f8ff; /* Azul muy claro */
-            color: var(--color-link);
-            padding: 4px 8px;
+            background-color: var(--color-bg);
+            color: var(--color-text-secondary);
+            padding: 4px 10px;
             border-radius: 16px;
-            margin-right: 6px;
+            margin: 4px 4px 4px 0;
+            font-size: 0.8em;
             font-weight: 500;
+            border: 1px solid var(--color-border);
+        }
+
+        /* --- Sección de Habilidades --- */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+        }
+        
+        .skill-item {
+            background-color: var(--color-bg-secondary);
+            color: var(--color-text-primary);
+            border: 1px solid var(--color-border);
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: transform 0.2s ease;
+        }
+        .skill-item:hover {
+            transform: translateY(-3px);
         }
 
         /* --- Footer --- */
         .footer {
             text-align: center;
-            padding: 24px 32px;
-            font-size: 0.85em;
-            color: var(--color-text-secondary);
+            padding: 48px 0;
+            margin-top: 48px;
             border-top: 1px solid var(--color-border);
-            margin-top: 32px;
+            font-size: 0.9em;
+            color: var(--color-text-secondary);
         }
         
-        /* --- Responsividad para Móviles --- */
+        /* --- Responsividad --- */
         @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                margin-top: 16px;
+            h1, .hero h1 {
+                font-size: 2.2em;
             }
-            
-            .sidebar, .main-content {
-                width: 100%;
+            .hero .subtitle {
+                font-size: 1.1em;
             }
-            
-            .profile-pic {
-                width: 150px; /* Tamaño fijo en móvil */
-                height: 150px;
+            h2 {
+                font-size: 1.8em;
+            }
+            .project-grid {
+                /* Se ajusta solo gracias a minmax() */
             }
         }
 
     </style>
 </head>
-<body data-theme="light"> <header class="header-nav">
+<body data-theme="dark"> <header class="header-nav container">
         <a href="#" class="logo">mrbrad.me</a>
+        
+        <button id="theme-toggle" title="Cambiar tema">
+            <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="display:none;"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
+            <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm-5-6.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm11 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-9.354 5.354a.5.5 0 0 1 0-.707l1.414-1.414a.5.5 0 1 1 .707.707l-1.414 1.414a.5.5 0 0 1-.707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.343 4.343a.5.5 0 0 1 .707 0l1.414 1.414a.5.5 0 0 1 0 .707L5.05 6.464a.5.5 0 0 1-.707-.707zm9.193 2.121a.5.5 0 0 1 0-.707l-1.414-1.414a.5.5 0 1 1 .707.707l1.414 1.414a.5.5 0 0 1-.707 0z"/></svg>
+        </button>
     </header>
 
-    <div class="container">
+    <main class="container">
 
-        <aside class="sidebar">
-            <img src="https://via.placeholder.com/296" alt="Foto de Mr. Brad" class="profile-pic">
-            
-            <h1 class="profile-name">Mr. Brad</h1>
-            <h2 class="profile-username">@mrbrad</h2>
-            
-            <p class="profile-bio">
-                Desarrollador Full-Stack y entusiasta de la tecnología. Creando soluciones modernas para la web.
+        <section class="hero">
+            <h1>Hola, soy Mr. Brad 👋</h1>
+            <p class="subtitle">
+                Desarrollador Full-Stack (o lo que seas). Convierto ideas en soluciones web modernas, rápidas y seguras.
             </p>
             
-            <ul class="profile-links">
+            <ul class="social-links">
                 <li>
-                    <svg viewBox="0 0 16 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-                    <a href="https://github.com/mrbrad" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://github.com/mrbrad" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+                        GitHub
+                    </a>
                 </li>
                 <li>
-                    <svg viewBox="0 0 24 24" version="1.1" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5V8h3v11zM6.5 6.5A1.5 1.5 0 118 5a1.5 1.5 0 01-1.5 1.5zM19 19h-3v-5.5c0-1.3-.47-2.17-1.5-2.17-.83 0-1.3.56-1.5 1.11-.07.2-.09.48-.09.76V19h-3V8h3v1.32c.4-.64 1.1-1.32 2.68-1.32C17.36 8 19 9.36 19 12.5v6.5z"></path></svg>
-                    <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5V8h3v11zM6.5 6.5A1.5 1.5 0 118 5a1.5 1.5 0 01-1.5 1.5zM19 19h-3v-5.5c0-1.3-.47-2.17-1.5-2.17-.83 0-1.3.56-1.5 1.11-.07.2-.09.48-.09.76V19h-3V8h3v1.32c.4-.64 1.1-1.32 2.68-1.32C17.36 8 19 9.36 19 12.5v6.5z"></path></svg>
+                        LinkedIn
+                    </a>
                 </li>
                 <li>
-                    <svg viewBox="0 0 24 24" version="1.1" aria-hidden="true"><path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-10 7L2 8V6l10 7 10-7v2z"></path></svg>
-                    <a href="mailto:hola@mrbrad.me">hola@mrbrad.me</a>
+                    <a href="mailto:hola@mrbrad.me">
+                        <svg viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-10 7L2 8V6l10 7 10-7v2z"></path></svg>
+                        Contacto
+                    </a>
                 </li>
             </ul>
+        </section>
 
-        </aside>
-
-        <main class="main-content">
+        <section class="projects">
+            <h2>Proyectos Destacados</h2>
             
-            <h2>Mis Proyectos</h2>
-            
-            <ul class="project-list">
+            <div class="project-grid">
                 
-                <li class="project-card">
-                    <h3>
-                        <a href="#" target="_blank" rel="noopener noreferrer">Nombre del Proyecto 1</a>
-                    </h3>
-                    <p class="description">
-                        Una breve descripción de lo que hace este proyecto, la tecnología utilizada y cuál fue mi rol principal.
-                    </p>
-                    <div class="tags">
-                        <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">Firebase</span>
+                <article class="project-card">
+                    <img src="https://via.placeholder.com/600x338/1c1c1c/999999?text=Imagen+Proyecto+1" alt="Preview del Proyecto 1">
+                    <div class="project-card-content">
+                        <h3>
+                            <a href="#" target="_blank" rel="noopener noreferrer">Nombre del Proyecto 1</a>
+                        </h3>
+                        <p class="description">
+                            Una breve descripción de lo que hace este proyecto, la tecnología utilizada y cuál fue mi rol.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Firebase</span>
+                        </div>
+                        <div class="links">
+                            <a href="#" target="_blank" rel="noopener noreferrer">Ver Demo</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer">Ver Código</a>
+                        </div>
                     </div>
-                </li>
+                </article>
 
-                <li class="project-card">
-                    <h3>
-                        <a href="#" target="_blank" rel="noopener noreferrer">Proyecto "Alpha"</a>
-                    </h3>
-                    <p class="description">
-                        Plataforma de análisis de datos en tiempo real construida con Python (Django) y visualizaciones con D3.js.
-                    </p>
-                    <div class="tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Django</span>
-                        <span class="tag">D3.js</span>
+                <article class="project-card">
+                    <img src="https://via.placeholder.com/600x338/1c1c1c/999999?text=Imagen+Proyecto+2" alt="Preview del Proyecto 2">
+                    <div class="project-card-content">
+                        <h3><a href="#" target="_blank" rel="noopener noreferrer">Proyecto "Alpha"</a></h3>
+                        <p class="description">
+                            Plataforma de análisis de datos en tiempo real construida con Python (Django) y D3.js.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Django</span>
+                            <span class="tag">D3.js</span>
+                        </div>
+                         <div class="links">
+                            <a href="#" target="_blank" rel="noopener noreferrer">Ver Demo</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer">Ver Código</a>
+                        </div>
                     </div>
-                </li>
-
-                <li class="project-card">
-                    <h3>
-                        <a href="#" target="_blank" rel="noopener noreferrer">Portfolio v1</a>
-                    </h3>
-                    <p class="description">
-                        La primera versión de mi portfolio, hecha con HTML y CSS puro para demostrar fundamentos de diseño web.
-                    </p>
-                    <div class="tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                    </div>
-                </li>
+                </article>
                 
-            </ul>
-            
-        </main>
+                <article class="project-card">
+                    <img src="https://via.placeholder.com/600x338/1c1c1c/999999?text=Imagen+Proyecto+3" alt="Preview del Proyecto 3">
+                    <div class="project-card-content">
+                        <h3><a href="#" target="_blank" rel="noopener noreferrer">Mi Blog Técnico</a></h3>
+                        <p class="description">
+                            Blog personal construido con Astro y MDX. Enfocado en velocidad y SEO.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">Astro</span>
+                            <span class="tag">MDX</span>
+                            <span class="tag">Tailwind</span>
+                        </div>
+                         <div class="links">
+                            <a href="#" target="_blank" rel="noopener noreferrer">Ver Blog</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer">Ver Código</a>
+                        </div>
+                    </div>
+                </article>
+                
+            </div>
+        </section>
 
-    </div>
+        <section class="skills">
+            <h2>Mis Habilidades</h2>
+            <div class="skills-grid">
+                <span class="skill-item">JavaScript (ES6+)</span>
+                <span class="skill-item">TypeScript</span>
+                <span class="skill-item">React</span>
+                <span class="skill-item">Node.js</span>
+                <span class="skill-item">Next.js</span>
+                <span class="skill-item">Python</span>
+                <span class="skill-item">Django</span>
+                <span class="skill-item">SQL (PostgreSQL)</span>
+                <span class="skill-item">MongoDB</span>
+                <span class="skill-item">Docker</span>
+                <span class="skill-item">Git & GitHub</span>
+                <span class="skill-item">HTML5</span>
+                <span class="skill-item">CSS3 & SASS</span>
+            </div>
+        </section>
+        
+    </main>
     
     <footer class="footer">
-        © 2025 mrbrad.me · Inspirado en el diseño de GitHub.
+        © 2025 mrbrad.me · Creado con inspiración y código.
     </footer>
+
+    <script>
+        const btn = document.getElementById("theme-toggle");
+        const iconMoon = document.getElementById("icon-moon");
+        const iconSun = document.getElementById("icon-sun");
+        const html = document.documentElement;
+
+        function setTheme(theme) {
+            if (theme === "dark") {
+                html.setAttribute("data-theme", "dark");
+                iconMoon.style.display = "none";
+                iconSun.style.display = "block";
+            } else {
+                html.setAttribute("data-theme", "light");
+                iconMoon.style.display = "block";
+                iconSun.style.display = "none";
+            }
+        }
+
+        function toggleTheme() {
+            const currentTheme = html.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            setTheme(newTheme);
+            localStorage.setItem("theme", newTheme);
+        }
+
+        (function initTheme() {
+            const savedTheme = localStorage.getItem("theme");
+            const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            const theme = savedTheme || preferredTheme; // Da prioridad al guardado, si no, al del sistema
+            setTheme(theme);
+        })();
+
+        btn.addEventListener("click", toggleTheme);
+    </script>
 
 </body>
 </html>
