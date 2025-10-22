@@ -36,7 +36,7 @@ const { title, description } = Astro.props;
             const btn = document.getElementById("theme-toggle");
             const html = document.documentElement;
 
-            function safeSetLocalStorage(key, value) {
+            function safeSetLocalStorage(key: string, value: string) {
                 try {
                     localStorage.setItem(key, value);
                 } catch (e) {
@@ -45,7 +45,7 @@ const { title, description } = Astro.props;
                 }
             }
 
-            function safeGetLocalStorage(key) {
+            function safeGetLocalStorage(key: string): string | null {
                 try {
                     return localStorage.getItem(key);
                 } catch (e) {
@@ -53,7 +53,7 @@ const { title, description } = Astro.props;
                 }
             }
 
-            function setTheme(theme) {
+            function setTheme(theme: string) {
                 if (!html) return;
                 html.setAttribute("data-theme", theme);
                 safeSetLocalStorage("theme", theme);
