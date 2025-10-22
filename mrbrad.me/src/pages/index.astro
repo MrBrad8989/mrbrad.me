@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+    title="Mr. Brad - Desarrollador" 
+    description="Portfolio de Mr. Brad. Desarrollador web estilo retro."
+>
+
+    <main class="container">
+
+        <section class="hero">
+            <h1>Hola, soy Mr. Brad 👋</h1>
+            <p class="subtitle">
+                Desarrollador Full-Stack. Convierto ideas en soluciones web.
+            </p>
+
+            <ul class="social-links">
+                <li><a href="https://github.com/mrbrad" target="_blank" rel="noopener noreferrer">[ GitHub ]</a></li>
+                <li><a href="#" target="_blank" rel="noopener noreferrer">[ LinkedIn ]</a></li>
+                <li><a href="mailto:hola@mrbrad.me">[ Contacto ]</a></li>
+            </ul>
+        </section>
+
+        <section class="projects">
+            <h2>Proyectos Destacados</h2>
+
+            <div class="project-grid">
+
+                <article class="project-card">
+                    <img src="https://via.placeholder.com/600x338/161616/00ff00?text=Proyecto+1+Img" alt="Preview del Proyecto 1">
+                    <div class="project-card-content">
+                        <h3><a href="#" target="_blank" rel="noopener noreferrer">Nombre del Proyecto 1</a></h3>
+                        <p class="description">
+                            Una breve descripción de lo que hace este proyecto.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="https://via.placeholder.com/600x338/161616/00ff00?text=Proyecto+2+Img" alt="Preview del Proyecto 2">
+                    <div class="project-card-content">
+                        <h3><a href="#" target="_blank" rel="noopener noreferrer">Proyecto "Alpha"</a></h3>
+                        <p class="description">
+                            Plataforma de análisis de datos en tiempo real.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Django</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+</Layout>

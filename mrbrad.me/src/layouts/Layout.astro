@@ -1,0 +1,80 @@
+---
+export interface Props {
+    title: string;
+    description: string;
+}
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+</head>
+<body>
+    <header class="header-nav container">
+        <a href="/" class="logo">mrbrad.me</a>
+        <button id="theme-toggle" title="Cambiar tema">Modo</button>
+    </header>
+
+    <slot />
+
+    <footer class="footer">
+        © 2025 mrbrad.me
+    </footer>
+
+    <script>
+        // Protecciones para ejecución en SSR y cuando elementos no existen.
+        (function () {
+            if (typeof document === "undefined" || typeof window === "undefined") return;
+
+            const btn = document.getElementById("theme-toggle");
+            const html = document.documentElement;
+
+            function safeSetLocalStorage(key, value) {
+                try {
+                    localStorage.setItem(key, value);
+                } catch (e) {
+                    // localStorage puede fallar en modos privados o restricciones; ignorar silenciosamente
+                    console.warn("localStorage unavailable:", e);
+                }
+            }
+
+            function safeGetLocalStorage(key) {
+                try {
+                    return localStorage.getItem(key);
+                } catch (e) {
+                    return null;
+                }
+            }
+
+            function setTheme(theme) {
+                if (!html) return;
+                html.setAttribute("data-theme", theme);
+                safeSetLocalStorage("theme", theme);
+            }
+
+            function toggleTheme() {
+                const currentTheme = html.getAttribute("data-theme") || "dark";
+                const newTheme = currentTheme === "dark" ? "light" : "dark";
+                setTheme(newTheme);
+            }
+
+            (function initTheme() {
+                const savedTheme = safeGetLocalStorage("theme");
+                const preferredTheme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                const theme = savedTheme || preferredTheme;
+                setTheme(theme);
+            })();
+
+            // Añadir listener sólo si el botón existe
+            btn?.addEventListener("click", toggleTheme);
+        })();
+    </script>
+</body>
+</html>

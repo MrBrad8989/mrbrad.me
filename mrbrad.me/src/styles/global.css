@@ -1,0 +1,20 @@
+/* src/styles/global.css */
+
+:root[data-theme="light"] {
+    --color-bg: #f0f0f0;
+    --color-bg-secondary: #ffffff;
+    /* ... etc ... */
+}
+
+:root[data-theme="dark"] {
+    --color-bg: #0a0a0a;
+    --color-bg-secondary: #161616;
+    /* ... etc ... */
+}
+
+body {
+    font-family: 'Pixelify Sans', monospace;
+    /* ... TODO el resto de tu CSS va aquí ... */
+}
+
+/* ... etc ... */
