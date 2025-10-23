@@ -23,6 +23,16 @@ jobs:
       - name: Build site
         run: npm run build --if-present
 
+      - name: Disable Jekyll on GitHub Pages
+        # Crear un archivo .nojekyll en la carpeta de salida evita que GitHub Pages
+        # intente procesar archivos con Jekyll (p.ej. archivos .astro con front matter inválido).
+        run: |
+          if [ -d ./dist ]; then
+            touch ./dist/.nojekyll
+          else
+            echo "Warning: dist not found, skipping .nojekyll creation" >&2
+          fi
+
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
