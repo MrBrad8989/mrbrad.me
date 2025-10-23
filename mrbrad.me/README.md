@@ -41,3 +41,14 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Despliegue en GitHub Pages
+
+Este repositorio incluye un workflow de GitHub Actions en `.github/workflows/deploy-to-gh-pages.yml` que construye el sitio y publica la carpeta `dist` en la rama `gh-pages` cuando hay pushes a `main`.
+
+Para que GitHub Pages muestre el sitio:
+
+- Ve a la configuración del repositorio en GitHub > Pages.
+- Selecciona la rama `gh-pages` y la carpeta `/ (root)` como fuente.
+
+Después del primer push a `main` espera a que el workflow termine; la página pública se servirá desde la URL indicada en la sección Pages.
