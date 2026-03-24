@@ -70,7 +70,7 @@ export default function Terminal() {
         className="mb-8 text-center sm:text-left flex flex-col items-center sm:items-start"
       >
         <h2 className="text-3xl font-bold md:text-5xl text-zinc-900 dark:text-white flex items-center gap-3">
-          Terminal <span className="text-transparent bg-clip-text bg-linear-to-r from-green-500 to-emerald-600 dark:from-green-400 dark:to-emerald-600">Interactiva</span>
+          Terminal <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-cyan-200 dark:from-blue-400 dark:to-cyan-200">Interactiva</span>
         </h2>
         <p className="mt-4 text-zinc-600 dark:text-zinc-400 max-w-2xl">
           ¿Te sientes con alma de hacker hoy? Prueba a interactuar con mi portafolio usando esta consola. 

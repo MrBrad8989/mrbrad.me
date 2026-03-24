@@ -45,7 +45,7 @@ export default function Projects() {
         className="mb-12"
       >
         <h2 className="text-3xl font-bold md:text-5xl text-zinc-900 dark:text-white">
-          Mis <span className="text-transparent bg-clip-text bg-linear-to-r from-green-500 to-emerald-600 dark:from-green-400 dark:to-emerald-600">Proyectos</span>
+          Mis <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-cyan-600 dark:from-blue-400 dark:to-cyan-200">Proyectos</span>
         </h2>
         <p className="mt-4 text-zinc-600 dark:text-zinc-400">
           Proyectos extraídos automáticamente y en tiempo real desde mi GitHub.
@@ -54,7 +54,7 @@ export default function Projects() {
 
       {loading ? (
         <div className="flex justify-center items-center py-20">
-          <div className="h-8 w-8 animate-spin rounded-full border-4 border-green-500 border-t-transparent"></div>
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-500 border-t-transparent"></div>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -67,14 +67,14 @@ export default function Projects() {
               viewport={{ once: true }}
               className="group relative flex flex-col justify-between rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 p-6 transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-900 hover:border-zinc-300 dark:hover:border-zinc-700 shadow-sm dark:shadow-none"
             >
-              <div className="absolute inset-0 -z-10 rounded-2xl bg-linear-to-br from-green-500/5 to-purple-500/5 opacity-0 transition-opacity group-hover:opacity-100" />
+              <div className="absolute inset-0 -z-10 rounded-2xl bg-linear-to-br from-blue-500/5 to-purple-500/5 opacity-0 transition-opacity group-hover:opacity-100" />
 
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-2">
                     <div className="h-3 w-3 rounded-full bg-red-500" />
                     <div className="h-3 w-3 rounded-full bg-yellow-500" />
-                    <div className="h-3 w-3 rounded-full bg-green-500" />
+                    <div className="h-3 w-3 rounded-full bg-blue-500" />
                   </div>
                   {repo.stargazers_count > 0 && (
                     <div className="flex items-center gap-1 text-xs text-yellow-600 dark:text-yellow-500">
@@ -106,7 +106,7 @@ export default function Projects() {
                   <Github className="h-4 w-4" /> Repo
                 </a>
                 {repo.homepage && (
-                  <a href={repo.homepage} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400 transition-colors hover:text-green-600 dark:hover:text-green-400">
+                  <a href={repo.homepage} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400 transition-colors hover:text-blue-600 dark:hover:text-blue-400">
                     <ExternalLink className="h-4 w-4" /> Demo
                   </a>
                 )}
