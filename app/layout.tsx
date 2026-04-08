@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     // Añadimos suppressHydrationWarning (necesario para next-themes)
     <html lang="es" className="scroll-smooth" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-white transition-colors duration-300`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-white transition-colors duration-300`} suppressHydrationWarning>
         {/* Envolvemos la app en el ThemeProvider */}
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
